@@ -17,7 +17,7 @@ Resources:
       EnableDnsSupport: true
       EnableDnsHostnames: true
       Tags:
-        - Key: CustomName
+        - Key: Name
           Value: !Ref VpcName
 
 Outputs:

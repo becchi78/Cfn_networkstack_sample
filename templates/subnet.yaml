@@ -33,9 +33,8 @@ Resources:
       AvailabilityZone: ap-northeast-1a
       MapPublicIpOnLaunch: true
       Tags:
-        - Key: CustomName
+        - Key: Name
           Value: !Ref SubnetName1
-
   Subnet2:
     Type: AWS::EC2::Subnet
     Properties:
@@ -44,9 +43,8 @@ Resources:
       AvailabilityZone: ap-northeast-1c
       MapPublicIpOnLaunch: true
       Tags:
-        - Key: CustomName
+        - Key: Name
           Value: !Ref SubnetName2
-
   Subnet3:
     Type: AWS::EC2::Subnet
     Properties:
@@ -55,7 +53,7 @@ Resources:
       AvailabilityZone: ap-northeast-1d
       MapPublicIpOnLaunch: true
       Tags:
-        - Key: CustomName
+        - Key: Name
           Value: !Ref SubnetName3
 
 Outputs:
@@ -63,16 +61,14 @@ Outputs:
     Description: The ID of the first Subnet
     Value: !Ref Subnet1
     Export:
-      Name: !Sub "${AWS::StackName}-SubnetId1"
-
+      Name: !Sub "SubnetStack-SubnetId1"
   SubnetId2:
     Description: The ID of the second Subnet
     Value: !Ref Subnet2
     Export:
-      Name: !Sub "${AWS::StackName}-SubnetId2"
-
+      Name: !Sub "SubnetStack-SubnetId2"
   SubnetId3:
     Description: The ID of the third Subnet
     Value: !Ref Subnet3
     Export:
-      Name: !Sub "${AWS::StackName}-SubnetId3"
+      Name: !Sub "SubnetStack-SubnetId3"

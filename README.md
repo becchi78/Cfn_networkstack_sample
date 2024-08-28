@@ -26,3 +26,5 @@ aws cloudformation create-stack \
 ```bash
 aws cloudformation delete-stack --stack-name NetworkStack
 ```
+
+## Output
