@@ -28,3 +28,8 @@ aws cloudformation delete-stack --stack-name NetworkStack
 ```
 
 ## Output
+
+- NetworkStack-VpcId
+- NetworkStack-SubnetId1
+- NetworkStack-SubnetId2
+- NetworkStack-SubnetId3
