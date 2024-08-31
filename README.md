@@ -29,7 +29,9 @@ aws cloudformation delete-stack --stack-name NetworkStack
 
 ## Output
 
-- NetworkStack-VpcId
-- NetworkStack-SubnetId1
-- NetworkStack-SubnetId2
-- NetworkStack-SubnetId3
+| キー      | 説明                        | エクスポート名         |
+| --------- | --------------------------- | ---------------------- |
+| SubnetId1 | The ID of the first Subnet  | NetworkStack-SubnetId1 |
+| SubnetId2 | The ID of the second Subnet | NetworkStack-SubnetId2 |
+| SubnetId3 | The ID of the third Subnet  | NetworkStack-SubnetId3 |
+| VpcId     | The ID of the VPC           | NetworkStack-VpcId     |
