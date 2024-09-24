@@ -8,6 +8,15 @@ Parameters:
   VpcCidr:
     Type: String
     Description: CIDR block for the VPC
+  AvailabilityZone1:
+    Type: String
+    Description: Availability Zone for the first subnet
+  AvailabilityZone2:
+    Type: String
+    Description: Availability Zone for the second subnet
+  AvailabilityZone3:
+    Type: String
+    Description: Availability Zone for the third subnet
   SubnetName1:
     Type: String
     Description: Name of the first subnet
@@ -45,6 +54,9 @@ Resources:
       TemplateURL: !Sub "${S3BucketURL}/subnet.yaml"
       Parameters:
         VpcId: !GetAtt VPCStack.Outputs.VpcId
+        AvailabilityZone1: !Ref AvailabilityZone1
+        AvailabilityZone2: !Ref AvailabilityZone2
+        AvailabilityZone3: !Ref AvailabilityZone3
         SubnetName1: !Ref SubnetName1
         SubnetCidr1: !Ref SubnetCidr1
         SubnetName2: !Ref SubnetName2
