@@ -5,6 +5,15 @@ Parameters:
   VpcId:
     Type: String
     Description: The VPC ID where the subnets will be created
+  AvailabilityZone1:
+    Type: String
+    Description: Availability Zone for the first subnet
+  AvailabilityZone2:
+    Type: String
+    Description: Availability Zone for the second subnet
+  AvailabilityZone3:
+    Type: String
+    Description: Availability Zone for the third subnet
   SubnetName1:
     Type: String
     Description: Name of the first subnet
@@ -30,7 +39,7 @@ Resources:
     Properties:
       VpcId: !Ref VpcId
       CidrBlock: !Ref SubnetCidr1
-      AvailabilityZone: ap-northeast-1a
+      AvailabilityZone: !Ref AvailabilityZone1
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -40,7 +49,7 @@ Resources:
     Properties:
       VpcId: !Ref VpcId
       CidrBlock: !Ref SubnetCidr2
-      AvailabilityZone: ap-northeast-1c
+      AvailabilityZone: !Ref AvailabilityZone2
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -50,7 +59,7 @@ Resources:
     Properties:
       VpcId: !Ref VpcId
       CidrBlock: !Ref SubnetCidr3
-      AvailabilityZone: ap-northeast-1d
+      AvailabilityZone: !Ref AvailabilityZone3
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -61,14 +70,14 @@ Outputs:
     Description: The ID of the first Subnet
     Value: !Ref Subnet1
     Export:
-      Name: !Sub "SubnetStack-SubnetId1"
+      Name: SubnetStack-SubnetId1
   SubnetId2:
     Description: The ID of the second Subnet
     Value: !Ref Subnet2
     Export:
-      Name: !Sub "SubnetStack-SubnetId2"
+      Name: SubnetStack-SubnetId2
   SubnetId3:
     Description: The ID of the third Subnet
     Value: !Ref Subnet3
     Export:
-      Name: !Sub "SubnetStack-SubnetId3"
+      Name: SubnetStack-SubnetId3
