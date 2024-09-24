@@ -1,4 +1,4 @@
-# Cfn_network_sample
+# Cfn_networkstack_sample
 
 Cfn のネステッドスタックとクロススタック参照のサンプル（network）
 

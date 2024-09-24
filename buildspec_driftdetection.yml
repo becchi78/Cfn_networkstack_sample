@@ -18,7 +18,6 @@ phases:
           sleep 10
         done
       - drift_status=$(aws cloudformation describe-stack-drift-detection-status --stack-drift-detection-id ${drift_detection_id} --query StackDriftStatus --output text)
-      #- echo "Drift Status: ${drift_status}"
       - |
         if [ "${drift_status}" == "DRIFTED" ]; then
           echo "Stack is drifted. Exiting with error."
