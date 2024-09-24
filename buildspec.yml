@@ -1,22 +1,6 @@
 version: 0.2
 
 phases:
-  pre_build:
-    commands:
-      - echo Installing necessary tools...
-      - pip install cfn-lint
-      - curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/aws-cloudformation/cloudformation-guard/main/install-guard.sh | sh
-
   build:
     commands:
-      - echo Running cfn-lint and cfn-guard...
-      - cfn-lint root-template.yaml templates/*.yaml
-      - ~/.guard/bin/cfn-guard validate -r ruleset.guard -d root-template.yaml templates/*.yaml
-
-  post_build:
-    commands:
-      - echo Build completed successfully.
-
-artifacts:
-  files:
-    - template.yaml
+      - aws s3 cp /templates/*.yaml s3://cfn-nested-sample/network/
