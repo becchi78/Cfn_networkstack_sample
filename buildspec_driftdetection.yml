@@ -1,9 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      python: 3.8
   build:
     commands:
       - echo "Starting Nested Stack Drift Detection"
@@ -74,7 +71,3 @@ phases:
           echo "No drift detected in any stack. Proceeding with pipeline."
           exit 0
         fi
-
-cache:
-  paths:
-    - '/root/.cache/pip'
