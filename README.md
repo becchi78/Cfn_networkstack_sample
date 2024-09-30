@@ -22,7 +22,7 @@ aws s3 cp ./templates/subnet.yaml s3://cfn-nested-sample/network/
 aws cloudformation create-stack \
   --stack-name NetworkStack \
   --template-body file://root-template.yaml \
-  --parameters file://param/parameters_cli.json \
+  --parameters file://param/parameters-cli.json \
   --capabilities CAPABILITY_IAM
 ```
 
